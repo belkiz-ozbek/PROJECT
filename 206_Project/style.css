@@ -62,7 +62,7 @@ td:nth-child(odd) {
   top: 0;
   left: 0;
   height: 100%;
-  width: calc(100% * 2);      /*sor bi*/
+  width: calc(100% * 2);
   text-align: center;
   background-color: #94d5d8;
   z-index: 5;           /*boşsa içi -1 olacak*/
