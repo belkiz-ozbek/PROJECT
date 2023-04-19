@@ -273,6 +273,7 @@ function atama(classIndex, courseIndex, day, time) {
 // cift boyutlu array
 // indexleri sifirlama
 
+///////////////////////////////////DEĞİŞTİRİLMEYECEK OLAN KISIM//////////////////////////////////
 const first_year = [
   { lecture: "", class: "", name: "", inst: "", akts: "" },
   { lecture: "", class: "", name: "", inst: "", akts: "" },
@@ -753,3 +754,4 @@ for(i=0; i<10; i++){
     document.getElementsByTagName("div")[i+35].style.zIndex="5";
   }
 }
+/////////////////////////////////////////////////BURAYA KADAR/////////////////////////////////////////
