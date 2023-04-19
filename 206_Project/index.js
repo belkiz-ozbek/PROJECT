@@ -1,9 +1,4 @@
-/////////////////////// ERVA ////////////////////////
 // Csv file içindeki data ları arraylere okuyoruz
-//var classroom={room:null,capacity:null,avaliable:0};
-//var busy = {instructor:null,day:null,time:null};
-// var service ={code:null,day:null,time:null};
-//var courses = {code:null,courseName:null,year:null,credit:null,c_e_state:null,d_c_state:null,num_of_Students:null,instructor:null};
 
 var arrClassroom = [];
 var arrBusy = [];
