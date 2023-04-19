@@ -277,3 +277,469 @@ function atama(classIndex, courseIndex, day, time) {
 //arraydan silme
 // cift boyutlu array
 // indexleri sifirlama
+
+const first_year = [
+  { lecture: "asdas", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+];
+
+const second_year = [
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+];
+
+const third_year = [
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+];
+
+const fourth_year = [
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+  { lecture: "", class: " ", name: " ", inst: " ", akts: " " },
+];
+
+firstYear(first_year);
+secondYear(second_year);
+thirdYear(third_year);
+fourthYear(fourth_year);
+
+function firstYear(data) {
+  var table = document.getElementById("first-year");
+  var fi = 0;
+
+  {
+    var row = `<tr>
+    <td>Morning</td>
+     <td> ${data[0].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[0].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[0].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[0].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[0].class}</td>
+    <td> ${data[1].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[1].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[1].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[1].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[1].class}</td>
+    <td> ${data[2].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[2].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[2].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[2].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[2].class}</td>
+    <td> ${data[3].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[3].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[3].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[3].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[3].class}</td>
+    <td> ${data[4].lecture}
+        <div class="info">
+          <p><i class="fa-solid fa-book-open"></i>: <span> ${data[4].name} </span></p>
+          <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[4].inst}</span></p>
+          <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[4].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[4].class}</td>
+  </tr>
+  <tr><td class="break" colspan="11">Break</td></tr>`;
+  
+    table.innerHTML += row;
+  }
+  fi = 1;
+
+  {
+    var row = `<tr>
+    <td>Afternoon</td>
+    <td> ${data[5].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[5].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[5].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[5].akts}</span></p>
+    </div>
+</td>
+<td>${data[5].class}</td>
+<td> ${data[6].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[6].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[6].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[6].akts}</span></p>
+    </div>
+</td>
+<td>${data[6].class}</td>
+<td> ${data[7].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[7].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[7].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[7].akts}</span></p>
+    </div>
+</td>
+<td>${data[7].class}</td>
+<td> ${data[8].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[8].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[8].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[8].akts}</span></p>
+    </div>
+</td>
+<td>${data[8].class}</td>
+<td> ${data[9].lecture}
+    <div class="info">
+      <p><i class="fa-solid fa-book-open"></i>: <span> ${data[9].name} </span></p>
+      <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[9].inst}</span></p>
+      <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[9].akts}</span></p>
+    </div>
+</td>
+<td>${data[9].class}</td>
+  </tr>`;
+
+    table.innerHTML += row;
+  }
+}
+
+function secondYear(data) {
+  var table = document.getElementById("second-year");
+  var se = 0;
+
+  {
+    var row = `<tr>
+    <td>Morning</td>
+     <td> ${data[0].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[0].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[0].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[0].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[0].class}</td>
+    <td> ${data[1].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[1].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[1].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[1].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[1].class}</td>
+    <td> ${data[2].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[2].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[2].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[2].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[2].class}</td>
+    <td> ${data[3].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[3].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[3].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[3].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[3].class}</td>
+    <td> ${data[4].lecture}
+        <div class="info">
+          <p><i class="fa-solid fa-book-open"></i>: <span> ${data[4].name} </span></p>
+          <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[4].inst}</span></p>
+          <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[4].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[4].class}</td>
+  </tr>
+  <tr><td class="break" colspan="11">Break</td></tr>`;
+    table.innerHTML += row;
+  }
+  se = 1;
+
+  {
+    var row = `<tr>
+    <td>Afternoon</td>
+    <td> ${data[5].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[5].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[5].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[5].akts}</span></p>
+    </div>
+</td>
+<td>${data[5].class}</td>
+<td> ${data[6].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[6].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[6].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[6].akts}</span></p>
+    </div>
+</td>
+<td>${data[6].class}</td>
+<td> ${data[7].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[7].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[7].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[7].akts}</span></p>
+    </div>
+</td>
+<td>${data[7].class}</td>
+<td> ${data[8].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[8].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[8].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[8].akts}</span></p>
+    </div>
+</td>
+<td>${data[8].class}</td>
+<td> ${data[9].lecture}
+    <div class="info">
+      <p><i class="fa-solid fa-book-open"></i>: <span> ${data[9].name} </span></p>
+      <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[9].inst}</span></p>
+      <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[9].akts}</span></p>
+    </div>
+</td>
+<td>${data[9].class}</td>
+  </tr>`;
+
+    table.innerHTML += row;
+  }
+}
+
+function thirdYear(data) {
+  var table = document.getElementById("third-year");
+  var th = 0;
+
+  {
+    var row = `<tr>
+    <td>Morning</td>
+     <td> ${data[0].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[0].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[0].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[0].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[0].class}</td>
+    <td> ${data[1].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[1].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[1].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[1].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[1].class}</td>
+    <td> ${data[2].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[2].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[2].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[2].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[2].class}</td>
+    <td> ${data[3].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[3].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[3].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[3].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[3].class}</td>
+    <td> ${data[4].lecture}
+        <div class="info">
+          <p><i class="fa-solid fa-book-open"></i>: <span> ${data[4].name} </span></p>
+          <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[4].inst}</span></p>
+          <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[4].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[4].class}</td>
+  </tr>
+  <tr><td class="break" colspan="11">Break</td></tr>`;
+    table.innerHTML += row;
+  }
+  th = 1;
+
+  {
+    var row = `<tr>
+    <td>Afternoon</td>
+    <td> ${data[5].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[5].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[5].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[5].akts}</span></p>
+    </div>
+</td>
+<td>${data[5].class}</td>
+<td> ${data[6].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[6].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[6].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[6].akts}</span></p>
+    </div>
+</td>
+<td>${data[6].class}</td>
+<td> ${data[7].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[7].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[7].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[7].akts}</span></p>
+    </div>
+</td>
+<td>${data[7].class}</td>
+<td> ${data[8].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[8].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[8].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[8].akts}</span></p>
+    </div>
+</td>
+<td>${data[8].class}</td>
+<td> ${data[9].lecture}
+    <div class="info">
+      <p><i class="fa-solid fa-book-open"></i>: <span> ${data[9].name} </span></p>
+      <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[9].inst}</span></p>
+      <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[9].akts}</span></p>
+    </div>
+</td>
+<td>${data[9].class}</td>
+  </tr>`;
+
+    table.innerHTML += row;
+  }
+}
+
+function fourthYear(data) {
+  var table = document.getElementById("fourth-year");
+  var fo = 0;
+
+  {
+    var row = `<tr>
+    <td>Morning</td>
+     <td> ${data[0].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[0].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[0].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[0].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[0].class}</td>
+    <td> ${data[1].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[1].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[1].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[1].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[1].class}</td>
+    <td> ${data[2].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[2].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[2].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[2].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[2].class}</td>
+    <td> ${data[3].lecture}
+        <div class="info">
+            <p><i class="fa-solid fa-book-open"></i>: <span> ${data[3].name} </span></p>
+            <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[3].inst}</span></p>
+            <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[3].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[3].class}</td>
+    <td> ${data[4].lecture}
+        <div class="info">
+          <p><i class="fa-solid fa-book-open"></i>: <span> ${data[4].name} </span></p>
+          <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[4].inst}</span></p>
+          <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[4].akts}</span></p>
+        </div>
+    </td>
+    <td>${data[4].class}</td>
+  </tr>
+  <tr><td class="break" colspan="11">Break</td></tr>`;
+    table.innerHTML += row;
+  }
+  fo = 1;
+
+  {
+    var row = `<tr>
+    <td>Afternoon</td>
+    <td> ${data[5].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[5].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[5].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[5].akts}</span></p>
+    </div>
+</td>
+<td>${data[5].class}</td>
+<td> ${data[6].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[6].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[6].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[6].akts}</span></p>
+    </div>
+</td>
+<td>${data[6].class}</td>
+<td> ${data[7].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[7].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[7].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[7].akts}</span></p>
+    </div>
+</td>
+<td>${data[7].class}</td>
+<td> ${data[8].lecture}
+    <div class="info">
+        <p><i class="fa-solid fa-book-open"></i>: <span> ${data[8].name} </span></p>
+        <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[8].inst}</span></p>
+        <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[8].akts}</span></p>
+    </div>
+</td>
+<td>${data[8].class}</td>
+<td> ${data[9].lecture}
+    <div class="info">
+      <p><i class="fa-solid fa-book-open"></i>: <span> ${data[9].name} </span></p>
+      <p><i class="fa-solid fa-graduation-cap"></i>: <span>${data[9].inst}</span></p>
+      <p><i class="fa-solid fa-coins"></i> Akts: <span>${data[9].akts}</span></p>
+    </div>
+</td>
+<td>${data[9].class}</td>
+  </tr>`;
+
+    table.innerHTML += row;
+  }
+}
