@@ -743,3 +743,18 @@ function fourthYear(data) {
     table.innerHTML += row;
   }
 }
+
+for(i=0; i<10; i++){
+  if(first_year[i].lecture!=""){
+    document.getElementsByTagName("div")[i+2].style.zIndex="5";
+  }
+  if(second_year[i].lecture!=""){
+    document.getElementsByTagName("div")[i+13].style.zIndex="5";
+  }
+  if(third_year[i].lecture!=""){
+    document.getElementsByTagName("div")[i+24].style.zIndex="5";
+  }
+  if(fourth_year[i].lecture!=""){
+    document.getElementsByTagName("div")[i+35].style.zIndex="5";
+  }
+}
