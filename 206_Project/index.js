@@ -17,7 +17,7 @@ const DaysOfWeek = {
 
 const TimePeriod = {
 "Morning": 0,
- "afternon": 1,
+ "Afternoon": 1,
 };
 async function fetchData() {
   try {
