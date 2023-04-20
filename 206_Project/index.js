@@ -103,7 +103,7 @@ async function fetchData() {
       i++;
       });
 console.log(arrCourses);
-});
+
 }catch(error){
 console.log(error);
 }
