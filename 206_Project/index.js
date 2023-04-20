@@ -19,15 +19,13 @@ const TimePeriod = {
 "Morning": 0,
  "afternon": 1,
 };
-function fetchData() {
-  fetch("./classroom.csv")
-    .then((response) => response.text())
-    .then((data) => {
-      // Split the CSV data into rows
-    const rows = data.trim().split("\n");
+async function fetchData() {
+  try {
+    const responseClassroom = await fetch("./classroom.csv");
+    const classroomData = await responseClassroom.text();
+    const classroomRows = classroomData.trim().split("\n");
     let i = 0;
-    // Loop over the rows and split each one into cells
-    rows.forEach((row) => {
+    classroomRows.forEach((row) => {
       let classroom = { "room": null, "capacity": null, "avaliable": 0 };
       const cells = row.split(";");
       classroom.room = cells[0];
@@ -37,7 +35,6 @@ function fetchData() {
       i++;
     });
     for (i = 0; i < arrClassroom.length; i++) {
-      //Sorulacak!!!!!!!!!!!
       for (j = 0; j < arrClassroom.length - i - 1; j++) {
         if (parseInt(arrClassroom[j].capacity) > parseInt(arrClassroom[j + 1].capacity)) {
           temp = arrClassroom[j];
@@ -47,14 +44,12 @@ function fetchData() {
       }
     }
     console.log(arrClassroom);
-    });
 
-  fetch("./busy.csv")
-    .then((response) => response.text())
-    .then((data) => {
-       const rows = data.trim().split("\n");
+    const responseBusy = await fetch("./busy.csv");
+    const busyData = await responseBusy.text();
+    const busyRows = busyData.trim().split("\n");
     i = 0;
-    rows.forEach((row) => {
+    busyRows.forEach((row) => {
       let busy = { "instructor": null, "day": null, "time": null };
       const cells = row.split(";");
       busy.instructor = cells[0];
@@ -63,16 +58,13 @@ function fetchData() {
       arrBusy[i] = busy;
       i++;
     });
-
     console.log(arrBusy);
-    });
 
-  fetch("./service.csv")
-    .then((response) => response.text())
-    .then((data) => {
-      const rows = data.trim().split("\n");
+    const responseService = await fetch("./service.csv");
+    const serviceData = await responseService.text();
+    const serviceRows = serviceData.trim().split("\n");
     i = 0;
-    rows.forEach((row) => {
+    serviceRows.forEach((row) => {
       let service = { "code": null, "day": null, "time": null };
       const cells = row.split(";");
       service.code = cells[0];
@@ -81,16 +73,13 @@ function fetchData() {
       arrService[i] = service;
       i++;
     });
-
     console.log(arrService);
-    });
 
-  fetch("./Courses.csv")
-    .then((response) => response.text())
-    .then((data) => {
-      const rows = data.trim().split("\n");
+    const responseCourses = await fetch("./Courses.csv");
+    const coursesData = await responseCourses.text();
+    const coursesRows = coursesData.trim().split("\n");
     i = 0;
-    rows.forEach((row) => {
+    coursesRows.forEach((row) => {
       let courses = {
         "code": null,
         "courseName": null,
@@ -107,17 +96,17 @@ function fetchData() {
       courses.year = cells[2];
       courses.credit = cells[3];
       courses.c_e_state = cells[4];
-      courses.d_c_state = cells[5];
+       courses.d_c_state = cells[5];
       courses.num_of_Students = cells[6];
       courses.instructor = cells[7];
       arrCourses[i] = courses;
       i++;
       });
-
-    console.log(arrCourses);
-    });
+console.log(arrCourses);
+}catch(error){
+console.log(error);
 }
-
+}
 
 
 
