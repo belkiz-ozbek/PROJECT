@@ -19,22 +19,25 @@ const TimePeriod = {
 "Morning": 0,
  "Afternoon": 1,
 };
-async function fetchData() {
-  try {
-    const responseClassroom = await fetch("./classroom.csv");
-    const classroomData = await responseClassroom.text();
-    const classroomRows = classroomData.trim().split("\n");
+
+fetch("./classroom.csv")
+  .then((response) => response.text())
+  .then((data) => {
+    // Split the CSV data into rows
+    const rows = data.trim().split("\n");
     let i = 0;
-    classroomRows.forEach((row) => {
+    // Loop over the rows and split each one into cells
+    rows.forEach((row) => {
       let classroom = { "room": null, "capacity": null, "avaliable": 0 };
       const cells = row.split(";");
       classroom.room = cells[0];
       classroom.capacity = cells[1];
-      classroom.avaliable = [[], [], [], [], []]; 
+      classroom.avaliable = [[]];
       arrClassroom[i] = classroom;
       i++;
     });
     for (i = 0; i < arrClassroom.length; i++) {
+      //Sorulacak!!!!!!!!!!!
       for (j = 0; j < arrClassroom.length - i - 1; j++) {
         if (parseInt(arrClassroom[j].capacity) > parseInt(arrClassroom[j + 1].capacity)) {
           temp = arrClassroom[j];
@@ -44,13 +47,19 @@ async function fetchData() {
       }
     }
     console.log(arrClassroom);
+  });
 
-    const responseBusy = await fetch("./busy.csv");
-    const busyData = await responseBusy.text();
-    const busyRows = busyData.trim().split("\n");
+
+
+
+//
+fetch("./busy.csv")
+  .then((response) => response.text())
+  .then((data) => {
+    const rows = data.trim().split("\n");
     i = 0;
-    busyRows.forEach((row) => {
-      let busy = { "instructor": null, "day": null, "time": null };
+    rows.forEach((row) => {
+      let busy = { instructor: null, day: null, time: null };
       const cells = row.split(";");
       busy.instructor = cells[0];
       busy.day = cells[1];
@@ -58,14 +67,16 @@ async function fetchData() {
       arrBusy[i] = busy;
       i++;
     });
-    console.log(arrBusy);
 
-    const responseService = await fetch("./service.csv");
-    const serviceData = await responseService.text();
-    const serviceRows = serviceData.trim().split("\n");
+  });
+//
+fetch("./service.csv")
+  .then((response) => response.text())
+  .then((data) => {
+    const rows = data.trim().split("\n");
     i = 0;
-    serviceRows.forEach((row) => {
-      let service = { "code": null, "day": null, "time": null };
+    rows.forEach((row) => {
+      let service = { code: null, day: null, time: null };
       const cells = row.split(";");
       service.code = cells[0];
       service.day = cells[1];
@@ -73,22 +84,25 @@ async function fetchData() {
       arrService[i] = service;
       i++;
     });
-    console.log(arrService);
 
-    const responseCourses = await fetch("./Courses.csv");
-    const coursesData = await responseCourses.text();
-    const coursesRows = coursesData.trim().split("\n");
+    console.log(arrService);
+  });
+//
+fetch("./Courses.csv")
+  .then((response) => response.text())
+  .then((data) => {
+    const rows = data.trim().split("\n");
     i = 0;
-    coursesRows.forEach((row) => {
+    rows.forEach((row) => {
       let courses = {
-        "code": null,
-        "courseName": null,
-        "year": null,
-        "credit": null,
-        "c_e_state": null,
-        "d_c_state": null,
-        "num_of_Students": null,
-        "instructor": null,
+        code: null,
+        courseName: null,
+        year: null,
+        credit: null,
+        c_e_state: null,
+        d_c_state: null,
+        num_of_Students: null,
+        instructor: null,
       };
       const cells = row.split(";");
       courses.code = cells[0];
@@ -96,19 +110,15 @@ async function fetchData() {
       courses.year = cells[2];
       courses.credit = cells[3];
       courses.c_e_state = cells[4];
-       courses.d_c_state = cells[5];
+      courses.d_c_state = cells[5];
       courses.num_of_Students = cells[6];
       courses.instructor = cells[7];
       arrCourses[i] = courses;
       i++;
-      });
-console.log(arrCourses);
+    });
 
-}catch(error){
-console.log(error);
-}
-}
-
+    console.log(arrCourses);
+  });
 
 
 for (k = 0; k < arrService.length; k++) {
