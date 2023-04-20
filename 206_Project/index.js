@@ -128,7 +128,7 @@ for (k = 0; k < arrService.length; k++) {
       //var index=(DaysOfWeek.arrService[k].day)*(TimePeriod.arrService[i].time)-1;
 
       for (j = 0; j < arrClassroom.length; j++) {
-        if (arrClassroom[j].capacity > arrCourses[i].capacity) {
+        if (parseInt(arrClassroom[j].capacity) > parseInt(arrCourses[i].capacity)) {
           arrClassroom[j].avaliable[DaysOfWeek.arrService[k].day][
             TimePeriod.arrService[i].time
           ] = arrCourses[i];
@@ -154,7 +154,7 @@ for (i = 0; i < arrCourses.length; i++) {
             indexBusy = 0;  // busy arraylarinin indexini sifirdan baslar
 
   for (j = 0; j < arrClassroom.length; j++) {
-    if (arrClassroom[j].capacity > arrCourses[i].capacity) {
+    if (parseInt(arrClassroom[j].capacity) > parseInt(arrCourses[i].capacity)) {
 
       for (k = 0; i < arrBusy.length; i++) {      /// is instructer busy
         if (arrBusy[k].instructor == arrCourses[i].instructor) { // hocanin mesgul oldugu gunleri ve zamanalari al
