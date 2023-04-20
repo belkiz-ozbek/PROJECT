@@ -8,31 +8,31 @@ var i, k, j, a, temp;
 
 
 const DaysOfWeek = {
-  Monday: 1,
-  Tuesday: 2,
-  Wednesday: 3,
-  Thursday: 4,
-  Friday: 5,
+ "Monday": 0,
+  "Tuesday": 1,
+  "Wednesday": 2,
+  "Thursday": 3,
+  "Friday": 4,
 };
 
 const TimePeriod = {
-  morning: 1,
-  afternon: 2,
+"Morning": 0,
+ "afternon": 1,
 };
-
-fetch("./classroom.csv")
-  .then((response) => response.text())
-  .then((data) => {
-    // Split the CSV data into rows
+function fetchData() {
+  fetch("./classroom.csv")
+    .then((response) => response.text())
+    .then((data) => {
+      // Split the CSV data into rows
     const rows = data.trim().split("\n");
     let i = 0;
     // Loop over the rows and split each one into cells
     rows.forEach((row) => {
-      let classroom = { room: null, capacity: null, avaliable: 0 };
+      let classroom = { "room": null, "capacity": null, "avaliable": 0 };
       const cells = row.split(";");
       classroom.room = cells[0];
       classroom.capacity = cells[1];
-      classroom.avaliable = [[]];
+      classroom.avaliable = [[], [], [], [], []]; 
       arrClassroom[i] = classroom;
       i++;
     });
@@ -47,19 +47,15 @@ fetch("./classroom.csv")
       }
     }
     console.log(arrClassroom);
-  });
+    });
 
-
-
-
-//
-fetch("./busy.csv")
-  .then((response) => response.text())
-  .then((data) => {
-    const rows = data.trim().split("\n");
+  fetch("./busy.csv")
+    .then((response) => response.text())
+    .then((data) => {
+       const rows = data.trim().split("\n");
     i = 0;
     rows.forEach((row) => {
-      let busy = { instructor: null, day: null, time: null };
+      let busy = { "instructor": null, "day": null, "time": null };
       const cells = row.split(";");
       busy.instructor = cells[0];
       busy.day = cells[1];
@@ -69,15 +65,15 @@ fetch("./busy.csv")
     });
 
     console.log(arrBusy);
-  });
-//
-fetch("./service.csv")
-  .then((response) => response.text())
-  .then((data) => {
-    const rows = data.trim().split("\n");
+    });
+
+  fetch("./service.csv")
+    .then((response) => response.text())
+    .then((data) => {
+      const rows = data.trim().split("\n");
     i = 0;
     rows.forEach((row) => {
-      let service = { code: null, day: null, time: null };
+      let service = { "code": null, "day": null, "time": null };
       const cells = row.split(";");
       service.code = cells[0];
       service.day = cells[1];
@@ -87,23 +83,23 @@ fetch("./service.csv")
     });
 
     console.log(arrService);
-  });
-//
-fetch("./Courses.csv")
-  .then((response) => response.text())
-  .then((data) => {
-    const rows = data.trim().split("\n");
+    });
+
+  fetch("./Courses.csv")
+    .then((response) => response.text())
+    .then((data) => {
+      const rows = data.trim().split("\n");
     i = 0;
     rows.forEach((row) => {
       let courses = {
-        code: null,
-        courseName: null,
-        year: null,
-        credit: null,
-        c_e_state: null,
-        d_c_state: null,
-        num_of_Students: null,
-        instructor: null,
+        "code": null,
+        "courseName": null,
+        "year": null,
+        "credit": null,
+        "c_e_state": null,
+        "d_c_state": null,
+        "num_of_Students": null,
+        "instructor": null,
       };
       const cells = row.split(";");
       courses.code = cells[0];
@@ -116,10 +112,14 @@ fetch("./Courses.csv")
       courses.instructor = cells[7];
       arrCourses[i] = courses;
       i++;
-    });
+      });
 
     console.log(arrCourses);
-  });
+    });
+}
+
+
+
 
 for (k = 0; k < arrService.length; k++) {
   //zorunlu ders yerleştirme
