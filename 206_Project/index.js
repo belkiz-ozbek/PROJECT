@@ -119,9 +119,7 @@ for (k = 0; k < arrService.length; k++) {
 
       for (j = 0; j < arrClassroom.length; j++) {
         if (parseInt(arrClassroom[j].capacity) > parseInt(arrCourses[i].capacity)) {
-          arrClassroom[j].avaliable[DaysOfWeek.arrService[k].day][
-            TimePeriod.arrService[i].time
-          ] = arrCourses[i];
+          arrClassroom[j].avaliable[DaysOfWeek[arrService[k].day]][TimePeriod[arrService[i].time]] = arrCourses[i];
         }
       }
 
