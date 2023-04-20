@@ -198,8 +198,8 @@ function classIsFull(classIndex, courseIndex ) {
               if (  
                 arrClassroom[a].avaliable[day][time].instructor !=  // diger siniflarda o zaman diliminde hocanin dersi yoksa 
                   arrCourses[courseIndex].instructor &&    //ve
-                arrClassroom[a].avaliable[day][time].year  !=   // diger siniflarda o zaman diliminde ayni sinifin dersi yoksa 
-                  arrCourses[courseIndex].year
+                parseInt(arrClassroom[a].avaliable[day][time].year)  !=   // diger siniflarda o zaman diliminde ayni sinifin dersi yoksa 
+                  parseInt(arrCourses[courseIndex].year)
               ) {
               
                 arrClassroom[classIndex].avaliable[avaibleDay][avaibleTime] == arrCourses[courseIndex]; 
